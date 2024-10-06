@@ -4,7 +4,24 @@ import { encodedRedirect } from "@/utils/utils";
 import { createClient } from "@/utils/supabase/server";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
+import { createUser } from "@/src/db/queries/insert";
+import { deleteUser } from "@/src/db/queries/delete";
+import { revalidatePath } from "next/cache";
+import { getUsers } from "@/src/db/queries/select";
+import { InsertUser } from "@/src/db/schema";
 
+/* Actions for usersTable */
+export const createUserAction = async (data: InsertUser) => {
+  await createUser(data)
+  revalidatePath("/")
+};
+
+export const deleteUserAction = async (userId: number) => {
+  await deleteUser(userId)
+  revalidatePath("/")
+}
+
+/* Boilerplate actions for Next.js */
 export const signUpAction = async (formData: FormData) => {
   const email = formData.get("email")?.toString();
   const password = formData.get("password")?.toString();
