@@ -8,8 +8,7 @@ This is a Next.js app, built with the [Next.js and Supabase Starter Kit](https:/
 - [x] Create the ability to add a user
 - [x] List all the users (must have pagination)
 - [x] Allow deleting of a user
-- [x] Create a user profile page when clicking on a row in the table and display info
-- about the user
+- [x] Create a user profile page when clicking on a row in the table and display info about the user
 - [x] Send us a link to your GitHub repo for us to review
 - [x] Everything must be in typescript
 - [x] Use [Drizzle](https://orm.drizzle.team/)
@@ -18,6 +17,8 @@ This is a Next.js app, built with the [Next.js and Supabase Starter Kit](https:/
 
 
 ### Key Points
+
+All changes can be seen in [this commit](https://github.com/stephenrhughes/searchland-test/commit/0413a4acb8fe19dd77b66ce6f7f5ef4e18c6537e) 
 
 1. Supabase selected as database given it's fast setup time
 2. Drizzle ORM used. See [src/db/schema.ts](./src/db/schema.ts) for DB schema.

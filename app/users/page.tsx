@@ -19,19 +19,17 @@ export default async function Page({
   const totalUsers = await countUsers();
 
   return (
-    <>
-      <div className="flex flex-row gap-6">
-        <CreateUser />
-        <div className="flex flex-col gap-2">
-          <UserTable users={users} />
-          <p>Total users: {totalUsers}</p>
-          <Pagination
-            currentPage={currentPage}
-            totalItems={totalUsers}
-            pageSize={PAGE_SIZE}
-          />
-        </div>
+    <div className="flex flex-row gap-6">
+      <CreateUser />
+      <div className="flex flex-col gap-2">
+        <UserTable users={users} />
+        <p>Total users: {totalUsers}</p>
+        <Pagination
+          currentPage={currentPage}
+          totalItems={totalUsers}
+          pageSize={PAGE_SIZE}
+        />
       </div>
-    </>
+    </div>
   );
 }
